@@ -1,0 +1,85 @@
+npm install -g create-react-app // initaializing packages
+create-react-app client-panel-app //generate application
+create-react-app . //also generate app
+npm i react-router-dom //same folder
+npm i redux react-redux react-redux-firebase redux-firestore
+npm i firebase
+npm i redux-auth-wrapper
+npm i --save react-redux-firebase@latest //latest versin
+npm start *****************************************************************************
+
+start with bootstrap:
+https://getbootstrap.com/docs/4.2/getting-started/introduction/
+// put this in main index.html
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+//font-awesome
+Style sheet :  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+//Bootstrap JS
+    -> in main.html ->
+    <body>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    </body>
+
+*****************************************************************************************
+ 1. navbar:
+    nav.navbar.navbar-expand-md.navbar-dark.bg-primary.mb-4
+ 2. container: .container
+ 3. button : button.navbar-toggler
+    <button className="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarMain">
+ 4. span toggeler icon : span.navbar-toggler-icon
+ 5. collapse : .collapse.navbar-collapse#navbarMain //id should match data-target="#navbarMain"
+ 6. List : ul.navbar-nav.mr-auto
+         : li.nav-item
+ 7. plus icon : i.fas.fa-plus
+ 8. 10 columns : .col-md-10
+ 9. 2 columns: .col-md-2
+ 10. users icon : i.fas.fa-users // {' '} jsx put spaces
+ 11. Table: table.table.table-striped
+ 12. Table header: thead.thead-inverse //inverse -> dark
+        <tbody>   </tbody>
+ 13. arrow circle icon : i.fas.fa-arrow-circle-right
+ 14. text box : h5.text-right.text-secondary
+
+ ********************************************************************************
+ react-dom: import {Link} from "react-router-dom"; //Link used for
+    * <Link to="/" className = "navbar-brand">  </Link> //header navigation
+
+ we should bring : import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+        -> App.js //we used Link part of reactor-dom so we need to do
+
+
+ *******************************************************************************
+ Looping Clients date:
+    {clients.map(client =>(
+             <tr key={client.id}></tr>
+     ))}
+
+**********************************************************************************
+Create store: Then
+    import {Provider} from "react-redux";
+    import store from './store';
+
+    add in app.ja -> //
+        <Provider store = {store}>
+                        <Router>
+                            <div className="App">
+                            </div>
+                         </Router>
+        </Provider>
+*******************************************************
+compose(
+    firestoreConnect([{collection: 'clients'}]), //get the clients from firebase
+    connect((state, props) => ({
+        clients : state.firestore.ordered.clients // put in the state and assign to clients
+    }))
+);
+
+const {clients} = this.props; //{used for pulling the value from props}
+OR
+const clients = this.props.clients;

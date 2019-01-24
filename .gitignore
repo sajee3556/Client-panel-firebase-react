@@ -21,3 +21,29 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+.idea
+*.iml
+node_modules
+bundle.js
+bundle.js.map
+
+git
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+node_modules/
+build/
+coverage/
+.nyc_output/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
