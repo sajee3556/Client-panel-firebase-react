@@ -11,8 +11,9 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 message: action.message,
-                messageType: action.message
+                messageType: action.messageType
             };
-            DEFAULT : return state;
+        default :
+            return state;
     }
 }
