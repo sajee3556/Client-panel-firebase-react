@@ -54,13 +54,13 @@ if (localStorage.getItem('settings') == null) {
     };
 
     // Set to localStorage
-    // localStorage.setItem('settings', JSON.stringify(defaultSettings));
-    localStorage.setItem('settings', defaultSettings);
+    localStorage.setItem('settings', JSON.stringify(defaultSettings));
+    // localStorage.setItem('settings', defaultSettings);
 }
 
 // Create initial state
-// const initialState = {settings: JSON.parse(localStorage.getItem('settings'))};
-const initialState = {settings: localStorage.getItem('settings')};
+const initialState = {settings: JSON.parse(localStorage.getItem('settings'))};
+// const initialState = {settings: localStorage.getItem('settings')};
 
 // Create store
 const store = createStoreWithFirebase(

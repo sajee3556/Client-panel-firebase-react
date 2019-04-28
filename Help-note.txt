@@ -1,3 +1,7 @@
+if node modules not exsit
+first: npm install
+********************************************************************************
+
 npm install -g create-react-app // initaializing packages
 create-react-app client-panel-app //generate application
 create-react-app . //also generate app
@@ -83,3 +87,29 @@ compose(
 const {clients} = this.props; //{used for pulling the value from props}
 OR
 const clients = this.props.clients;
+
+***********************************************************************************************************
+
+    { } //means output javascript dynamic content
+	
+	handleClick(e) {
+	console.log(this.state); //this throws an error not a react function
+	} then used to arrow function ->
+	
+	handleClick =(e) => {
+		console.log(this.state); //here this mean outside function within class 
+	}
+	
+	/: identify params
+	
+	*******************************************************************************
+	
+	Redux is central data store :
+		store.dispatch(); // update the state to Reducer
+		stroe.subscribe(); //
+	
+	Mapping State to Props : connect() <Higher order component> get state from store and map to props
+	
+	Map Dispatch To Props : 
+	
+	
